@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- font awesome icons -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+      <!-- css stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/Solicode_logo_without_slogan_for_white_BG.svg" alt="logo">
+        </div>
+        <div class="sidebar-content">
+                <a href="/"><i class="fa-solid fa-users"></i>Students</a>
+                <a href="/addStudent/addStudent.html"><i class="fa-solid fa-user-plus"></i>Add student</a>
+        </div>
+    </aside>
+    <section class="table-conatiner">
+         <div class="table-header">
+             <h2>List of Students</h2>
+             <a href="/addStudent/addStudent.html">Add Student</a>
+         </div>
+        <table id="table">
+          <thead id="tableHead">
+            <tr>
+
+              <th>Picture</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Group</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </section>
+
+      <script src="home/homePage.js"></script>
+</body>
+</html>

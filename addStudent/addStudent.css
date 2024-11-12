@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --linear-grad: linear-gradient(to right, #141e30, #243b55);
+  --grad-clr1: #141e30;
+  --grad-clr2: #243b55;
+}
+
+body {
+  height: 100vh;
+  background: #f6f5f7;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+}
+
+.sidebar {
+    width: 15%;
+    height: 100vh;
+    background-color:var(--grad-clr1);
+    color: white;
+    padding: 10px;
+    height: 100vh;
+}
+
+
+
+.sidebar-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  
+}
+
+.sidebar .sidebar-content a{
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+
+.sidebar .sidebar-content a:hover{
+  border: solid 1px #f6f5f7 ;
+  background: #f6f5f7;
+  color: #141e30;
+}
+
+.sidebar-content i{
+  margin-right: 5px;
+}
+
+ h1 {
+  color: var(--grad-clr1);
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+main{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.studentFormContainer{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 25px 30px 55px #5557;
+  border-radius: 13px;
+  margin: auto;
+  padding: 2rem 0 0 0;
+  transition: all 0.6s ease-in-out;
+}
+h2{
+  color: var(--grad-clr1);
+}
+
+.required-container h5 {
+  color: red;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#student-form{
+  width: 100%;
+  padding: 2rem 6rem;
+  margin-top: 20px;
+}
+
+
+.form-group{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+
+#student-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+label span{
+  color: #ff3860;
+}
+
+.fullName{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#student-form input,
+#student-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+#student-form input,
+#student-form select :focus{
+  outline: none;
+}
+
+
+
+.form-group .error {
+  color: #ff3860;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+#submit {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  border: solid var(--grad-clr1) 1px;
+  background: var(--grad-clr2);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+#submit:hover {
+  background: #fff;
+  color: var(--grad-clr1);
+}
+
+
+.popup{
+  display: none;
+  background-color: white;
+  border-radius: 10px;
+  position: fixed;
+  left: 30%;
+  margin-top: 20px;
+  width: 850px;
+  height: 700px;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+
+
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--grad-clr2);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--grad-clr2);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--grad-clr2);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+
+  background-color: #a8bbbf;
+
+}
+
+
+
+.popup h2{
+  text-align: center;
+}
+.popup h2::first-letter{
+  color: #e9a1ff;
+  font-size:3rem;
+  font-weight: 600;
+}
+
+
+#projectForm label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+label span{
+  color: #ff3860;
+}
+
+
+#projectForm input,
+#projectForm select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+ul.ks-cboxtags {
+  list-style: none;
+  padding: 20px;
+}
+ul.ks-cboxtags li{
+display: inline;
+}
+ul.ks-cboxtags li label{
+  display: inline-block;
+  background-color: rgba(255, 255, 255, .9);
+  border: 2px solid rgba(139, 139, 139, .3);
+  color: #adadad;
+  border-radius: 25px;
+  white-space: nowrap;
+  margin: 3px 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+ul.ks-cboxtags li label::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  padding: 2px 6px 2px 2px;
+  content: "\f067";
+  transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+  content: "\f00c";
+  transform: rotate(-360deg);
+  transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+  border: 2px solid #1bdbf8;
+  background-color: #12bbd4;
+  color: #fff;
+  transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+position: absolute;
+opacity: 0;
+}
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+border: 2px solid #e9a1ff;
+}
+
+
+.popup #projectAdded{
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.popup .project-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border: #141e30 0.5px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+
+#createP {
+  display: none;
+  cursor: pointer;
+  margin: auto;
+  border-radius: 20px;
+  border: solid rgb(27, 150, 27) 1px;
+  color: rgb(27, 150, 27);
+  background: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+#createP:hover {
+  background: rgb(27, 150, 27);
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

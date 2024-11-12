@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="addStudent.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="/images/Solicode_logo_without_slogan_for_white_BG.svg" alt="logo">
+        </div>
+        <div class="sidebar-content">
+            <a href="/index.html"><i class="fa-solid fa-users"></i>Students</a>
+            <a href="addStudent.html"><i class="fa-solid fa-user-plus"></i>Add student</a>
+        </div>
+    </aside>
+    <main>
+        <div class="studentFormContainer">
+            <h2>Enter Student Information</h2>
+            <div class="required-container">
+                <h5>* Indicates a required question</h5>
+            </div>
+            <form id="student-form">
+                <div class="fullName">
+                    <div class="form-group">
+                        <label for="fname"><span>*</span> First Name :</label>
+                        <input onkeyup="validInputs()" type="text" placeholder="Enter Your First Name" name="fname"
+                            id="fname" />
+                        <div class="error" id="fnameError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname"><span>*</span> last Name :</label>
+                        <input onkeyup="validInputs()" type="text" placeholder="Enter Your Last Name" name="lname"
+                            id="lname" />
+                        <div class="error" id="lnameError"></div>
+                    </div>
+                </div>
+                <div class="fullName">
+                    <div class="form-group">
+                        <label for="email"><span>*</span> Email :</label>
+                        <input onkeyup="validInputs()" type="email" placeholder="nom.prenom.solicode@gmail.com" name="email"
+                            id="email" />
+                        <div class="error" id="emailError"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber"><span>*</span> Phone Number :</label>
+                        <input onkeyup="validInputs()" type="tel" id="phoneNumber" placeholder="+212XXX-XX-XX-XX" name="phoneNumber">
+                        <div class="error" id="phoneError"></div>
+                    </div>
+
+                </div>
+               
+                <div class="form-group">
+                    <label for="group"><span>*</span> Group:</label>
+                    <select onchange="validInputs()" id="group" name="group">
+                        <option value="">select category</option>
+                        <option value="Group 1">Group 1</option>
+                        <option value="Group 2">Group 2</option>
+                        <option value="Group 3">Group 3</option>
+                        <option value="Group 4">Group 4</option>
+                    </select>
+                    <div class="error" id="groupError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="picture"><span>*</span> Group:</label>
+                    <input type="file"  id="picture" name="picture" required>                  
+                </div>
+                
+                <button type="submit" id="submit" onclick="addStudent()">Next</button>
+            </form>
+        </div>
+    </main>
+    <section class="popup" id="confirmation">
+        <h2>Add Your Projects</h2>
+        <form id="projectForm">
+            <div class="form-group">
+                <label for="projectTitle"><span>*</span> Project Title :</label>
+                <input onkeyup="validProjectInputs()" type="text" placeholder="Enter Your First Name" name="projectTitle"
+                    id="projectTitle" />
+                <div class="error" id="projectTitleError"></div>
+            </div>
+            <div class="form-group">
+                <label for="description"><span>*</span> Description :</label>
+                <input onkeyup="validProjectInputs()" type="text" placeholder="Project Description" name="description"
+                    id="description" />
+                <div class="error" id="descriptionError"></div>
+            </div>
+            <div class="form-group">
+                <label for="lienGithub"><span>*</span> Lien GitHub :</label>
+                <input onkeyup="validProjectInputs()" type="url" placeholder="lien GitHub" name="lienGithub" id="lienGithub" />
+                <div class="error" id="lienGithubError"></div>
+            </div>
+            <div class="form-group checkbox">
+                <label for="skills"><span>*</span> Skills :</label>
+                    <ul class="ks-cboxtags">
+                        <li><input type="checkbox" id="checkboxOne" value="HTML" name="skills"><label
+                                for="checkboxOne" >HTML</label></li>
+                        <li><input type="checkbox" id="checkboxTwo" value="css" name="skills"><label
+                                for="checkboxTwo">CSS</label></li>
+                        <li><input type="checkbox" id="checkboxThree" value="javascript" name="skills"><label
+                                for="checkboxThree">JavaScript</label></li>
+                        <li><input type="checkbox" id="checkboxFour" value="github" name="skills"><label
+                                for="checkboxFour">GitHub</label></li>
+                        <li><input type="checkbox" id="checkboxFive" value="oop" name="skills"><label
+                                for="checkboxFive">OPP</label></li>
+                                          
+                    </ul>
+
+                <div class="error" id="skillsError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="date"><span>*</span> Date :</label>
+                <input onchange="validProjectInputs()" type="date" name="date" id="dateProject" />
+                <div class="error" id="dateProjectError"></div>
+            </div>
+            <div class="form-group">
+                <label for="projectImage"><span>*</span> Project Image :</label>
+                <input type="file" id="projectImage" name="projectImage" required>
+                
+            </div>
+
+            <button type="submit" id="submit" onclick="addProject()">Add Project</button>
+        </form>
+
+        <div id="projectAdded">
+            
+        </div>
+
+        <Button id="createP">Create Portfolio</Button>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
